@@ -20,8 +20,16 @@
   if (!canvas) return;
 
   /* ── Renderer ───────────────────────────────────────────── */
-  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  const mobile = window.innerWidth <= 768;
+
+  const renderer = new THREE.WebGLRenderer({
+    canvas,
+    antialias: !mobile,   /* skip antialiasing on mobile for perf */
+    alpha: true,
+    powerPreference: 'high-performance',
+  });
+  /* Cap pixel ratio — mobile retina screens would be too expensive */
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, mobile ? 1.5 : 2));
   renderer.setClearColor(0x000000, 0);
 
   const scene  = new THREE.Scene();
@@ -42,7 +50,8 @@
   const GOLD_FOG = new THREE.Color(0x2a1e08);
 
   /* ── Node positions ─────────────────────────────────────── */
-  const N   = 200;
+  /* Fewer nodes on mobile = better GPU performance */
+  const N   = window.innerWidth <= 768 ? 100 : 200;
   const R   = 1.65;
   const phi = Math.PI * (3 - Math.sqrt(5));
   const pos = [];
@@ -151,13 +160,21 @@
   spawnPulse();
   setInterval(spawnPulse, 2200);
 
-  /* ── Mouse tilt ─────────────────────────────────────────── */
+  /* ── Mouse tilt (desktop) + touch tilt (mobile) ─────────── */
   const tT = { x: 0, y: 0 };
   const tC = { x: 0, y: 0 };
+
   window.addEventListener('mousemove', e => {
     tT.x = -(e.clientY / window.innerHeight - 0.5) * 0.28;
     tT.y =  (e.clientX / window.innerWidth  - 0.5) * 0.28;
   });
+
+  /* Touch tilt — finger position drives subtle rotation */
+  window.addEventListener('touchmove', e => {
+    if (!e.touches[0]) return;
+    tT.x = -(e.touches[0].clientY / window.innerHeight - 0.5) * 0.18;
+    tT.y =  (e.touches[0].clientX / window.innerWidth  - 0.5) * 0.18;
+  }, { passive: true });
 
   /* ── Animation loop ─────────────────────────────────────── */
   const clock = new THREE.Clock();
