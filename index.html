@@ -1,478 +1,420 @@
 <!DOCTYPE html>
-   <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muntazir Ali Mughal — Data Scientist & ML Engineer. MSc Data Science, King's College London." />
 
-      <!--=============== FAVICON ===============-->
-      <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
-      <!--=============== REMIXICONS ===============-->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-
-      <!--=============== SWIPER CSS ===============-->
-      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
-
-      <!--=============== CSS ===============-->
-      <link rel="stylesheet" href="assets/css/styles.css">
-
-      <title>Portfolio</title>
-   </head>
-   <body>
-      <!--==================== HEADER ====================-->
-      <header class="header" id="header">
-         <div class="blob-animate"></div>
-         
-         <nav class="nav container">
-            <a href="#" class="nav__logo">Muntazir Ali</a>
-
-            <div class="nav__menu">
-               <ul class="nav__list">
-                  <li>
-                     <a href="#about" class="nav__link">About Me</a>
-                  </li>
-
-                  <li>
-                     <a href="#projects" class="nav__link">Projects</a>
-                  </li>
-
-                  <li>
-                     <a href="#contact" class="nav__link">Contact</a>
-                  </li>
-               </ul>
-            </div>
-         </nav>
-      </header>
-
-      <!--==================== MAIN ====================-->
-      <main class="main">
-         <!-- CUSTOM CURSOR -->
-         <div class="cursor"></div>
-
-         <!--==================== HOME ====================-->
-         <section class="home section">
-            <div class="home__shadow"></div>
-            
-            <div class="home__container container grid">
-               <div class="home__data">
-                  <h3 class="home__greeting">Hello, I'm</h3>
-                  <h1 class="home__name">Muntazir <br> Ali Mughal</h1>
-               </div>
-               
-               <div class="home__image">
-                  <div class="blob-animate"></div>
-                  <img src="assets/img/profile.png" alt="image" class="home__perfil">
-               </div>
-
-               <div class="home__info">
-                  <h3 class="home__split">Data Science</h3>
-                  <!-- Insert profession, short text -->
-                  <h2 class="home__profession-1">MSc Student</h2>
-                  <h2 class="home__profession-2">& ML Developer</h2>
-               </div>
-
-               <div class="home__social">
-                  <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" class="home__social-link">
-                     <i class="ri-linkedin-box-line"></i>
-                  </a>
-
-                  <a href="https://github.com/MuntazirAliM" target="_blank" class="home__social-link">
-                     <i class="ri-github-line"></i>
-                  </a>
-
-               </div>
-
-               <a href="assets/pdf/Muntazir Ali.pdf" download target="_blank" class="home__cv">
-                  RESUME <i class="ri-file-list-2-line"></i>
-               </a>
-            </div>
-         </section>
-
-         <!--==================== ABOUT ====================-->
-         <section class="about section" id="about">
-            <div class="about__shadow"></div>
-
-            <div class="about__container container grid">
-               <div class="about__data">
-                  <h2 class="section__title">
-                     <span>Data</span> 
-                     <br> Is My Playground
-                  </h2>
-
-                  <p class="about__description">
-                     I’m <b>Muntazir Ali Mughal</b>, an <b>MSc Data Science</b> student at <b>King’s College London</b>.
-                     I build end-to-end machine learning projects — from <b>data cleaning and feature engineering</b>
-                     to <b>model training, evaluation, and deployment</b>. I care about
-                     <b>practical ML</b>, clear documentation, and explainable results.
-                  </p>
-
-                  <a href="assets/pdf/Muntazir Ali.pdf" download class="button">
-                     Resume <i class="ri-file-list-2-line"></i>
-                  </a>
-               </div>
-
-               <div class="about__image">
-                  <div class="blob-animate"></div>
-                  <div class="blob-animate"></div>
-                  <img src="assets/img/pfp2.png" alt="image" class="about__perfil">
-               </div>
-            </div>
-         </section>
-
-         <!--==================== PROJECTS ====================-->
-         <section class="projects section" id="projects">
-            <h2 class="section__title">
-               My Featured <br>
-               <span>Projects</span>
-            </h2>
-
-            <div class="projects__container container grid">
-               <div class="projects__swiper swiper">
-                  <div class="swiper-wrapper">
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-                        
-                        <div class="projects__number">
-                           <h1>01</h1>
-                           <h3>ML</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Hospital Readmission <br> Prediction</h1>
-                           <p class="projects__subtitle">Tech used</p>
-                           <p class="projects__description">Python, pandas, scikit-learn, XGBoost, SHAP, Streamlit</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/ss.png" alt="image" class="projects__img">
-                           <a href="https://github.com/MuntazirAliM/hospital-readmission-project.git" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>02</h1>
-                           <h3>Data Science</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">FinRisk Terminal <br> AI Financial Risk Platform</h1>
-                           <p class="projects__subtitle">Tech used</p>
-                           <p class="projects__description">Python, XGBoost, LangChain, RAG, DuckDB, ChromaDB, MLflow, Streamlit and Ollama.</p>
-                        </div>
-   
-                        <div class="projects__image">
-                           <img src="assets/img/image.png" alt="image" class="projects__img">
-                           <a href="https://github.com/MuntazirAliM/financial-risk-copilot.git" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>03</h1>
-                           <h3>Next</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Next Project <br> Coming Soon</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description"></p>
-                        </div>
-   
-                        <div class="projects__image">
-                           
-                           <a href="#" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>04</h1>
-                           <h3>Next</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Next Project <br> Coming Soon</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description"></p>
-                        </div>
-   
-                        <div class="projects__image">
-                           
-                           <a href="#" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-   
-                     <article class="projects__card swiper-slide">
-                        <div class="blob"></div>
-   
-                        <div class="projects__number">
-                           <h1>05</h1>
-                           <h3>Next</h3>
-                        </div>
-   
-                        <div class="projects__data">
-                           <h1 class="projects__title">Next Project <br> Coming Soon</h1>
-                           <p class="projects__subtitle">Technologies used</p>
-                           <p class="projects__description"></p>
-                        </div>
-   
-                        <div class="projects__image">
-                          
-                           <a href="#" target="_blank" class="projects__button">
-                              <i class="ri-arrow-right-up-long-line"></i>
-                           </a>
-                        </div>
-                     </article>
-                  </div>
-   
-                  <div class="swiper-pagination"></div>
-               </div>
-            </div>
-         </section>
-
-         <!--==================== WORK ====================-->
-         <section class="work section">
-            <h2 class="section__title">
-               <span>My </span> 
-               <br> Edcuation
-            </h2>
-
-            <div class="work__container container grid">
-              
-                  
-
-                  <!-- Button Education -->
-                  <button class="work__button" data-target="#education">
-                     Education <i class="ri-graduation-cap-line"></i>
-                  </button>
-              
+  <title>Muntazir Ali Mughal — Data Scientist & ML Engineer</title>
 
 
-                  <!-- Content Education -->
-                  <div class="work__content" data-content id="education">
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">MSc <br> Data Science</h1>
-                              <h3 class="work__subtitle">King's College London</h3>
-                           </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet" />
 
-                           <h2 class="work__year">2025-Present</h2>
-                        </div>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
 
-                        <p class="work__description">
-                            Focused on machine learning, data engineering, and practical applied AI.
-                        </p>
-                     </div>
+  <div class="cursor"      id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
 
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">BSc <br> Software Engineering</h1>
-                              <h3 class="work__subtitle">Liverpool John Moores University</h3>
-                           </div>
+  
+  <nav>
+    <a href="#" class="nav-logo">M · A · M</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-                           <h2 class="work__year">2022-2025</h2>
-                        </div>
+  
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid-lines"></div>
 
-                        <p class="work__description">
-                           First-Class Honours. Built software projects across backend, frontend,
-                           databases, and applied ML/DS components.
-                        </p>
-                     </div>
+    <div class="hero-left">
+      <div class="hero-tag">Data Scientist &amp; ML Engineer</div>
+      <h1 class="hero-name">Muntazir<br><em>Ali Mughal</em></h1>
+      <p class="hero-title">MSc Data Science · King's College London</p>
+      <p class="hero-desc">
+        I build end-to-end machine learning systems — from raw data pipelines
+        to deployed models and explainable outputs. Currently researching at KCL
+        while building production-ready AI projects.
+      </p>
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="https://github.com/MuntazirAliM" target="_blank" class="btn-ghost">GitHub</a>
+      </div>
+    </div>
 
-                     <div class="work__card">
-                        <div class="work__data">
-                           <div>
-                              <h1 class="work__title">BTEC <br> Mechanical Engineering</h1>
-                              <h3 class="work__subtitle">Pearson College</h3>
-                           </div>
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="hero-visual-ring"></div>
+        <div class="hero-visual-ring2"></div>
+        <div class="hero-visual-inner">
+          <div class="hero-visual-label">Projects</div>
+          <div class="hero-visual-stat">4+</div>
+          <div class="hero-visual-sub">Production-grade</div>
+        </div>
+        <div class="hero-stats left">
+          <div class="stat-pill">
+            <div class="stat-pill-num">15K+</div>
+            <div class="stat-pill-label">Rows analysed</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-pill-num">95%</div>
+            <div class="stat-pill-label">Model accuracy</div>
+          </div>
+        </div>
+        <div class="hero-stats right">
+          <div class="stat-pill">
+            <div class="stat-pill-num">500+</div>
+            <div class="stat-pill-label">SEC filings</div>
+          </div>
+          <div class="stat-pill">
+            <div class="stat-pill-num">8+</div>
+            <div class="stat-pill-label">Workflows auto.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                           <h2 class="work__year">2022</h2>
-                        </div>
+  <hr class="gold-rule" />
 
-                        <p class="work__description">
-                           Graduated with upper second class. Studied and worked on embedded systems and micro-controllers
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
+  
+  <section id="about">
+    <div class="section-tag reveal">About</div>
+    <h2 class="section-heading reveal reveal-delay-1">
+      Building things that<br><em>actually work</em>
+    </h2>
 
-         <!--==================== SERVICES ====================-->
-         <section class="services section">
-            <h2 class="section__title">What I <span>Offer</span></h2>
-
-            <div class="services__container container grid">
-               <!-- Services Developer -->
-               <div class="services__card services-open">
-                  <div class="blob"></div>
-
-                  <div class="services__data">
-                     <h2 class="services__title">Data Science & Machine Learning</h2>
-                     <p class="services__description">
-                         End-to-end ML work: data cleaning, feature engineering, model training,
-                         evaluation, and explainability for real-world projects.
-                     </p>
-                  </div>
-
-                  <div class="services__info">
-        <h3 class="services__subtitle">Skills & Tools</h3>
-
-        <ul class="services__skills">
-          <li class="services__skill">Python</li>
-          <li class="services__skill">pandas</li>
-          <li class="services__skill">NumPy</li>
-          <li class="services__skill">Matplotlib</li>
-          <li class="services__skill">scikit-learn</li>
-          <li class="services__skill">XGBoost</li>
-          <li class="services__skill">Model Evaluation</li>
-          <li class="services__skill">Feature Engineering</li>
-          <li class="services__skill">Explainability (SHAP)</li>
-        </ul>
+    <div class="about-grid">
+      <div class="about-text reveal reveal-delay-2">
+        <p>
+          I'm an MSc Data Science student at <strong>King's College London</strong>
+          with a BSc in Software Engineering. My work sits at the intersection of
+          rigorous data science and practical engineering — I care about models that
+          perform, pipelines that run in production, and outputs that non-technical
+          stakeholders can actually use.
+        </p>
+        <p>
+          I've built financial risk platforms grounded in <strong>SEC filings</strong>,
+          clinical readmission models with <strong>SHAP explainability</strong>, and
+          real-time data pipelines from raw hardware inputs. Every project is built
+          to be deployed, not just demonstrated.
+        </p>
+        <p>
+          Outside the technical work, I'm genuinely curious about the
+          <strong>intersections between data and decisions</strong> — whether that's
+          in financial markets, healthcare systems, or behaviour change communications.
+        </p>
       </div>
 
+      <div class="about-right">
+        <div class="about-card reveal reveal-delay-2">
+          <div class="about-card-icon">⚡</div>
+          <div class="about-card-title">End-to-end thinking</div>
+          <div class="about-card-text">
+            From raw data ingestion to deployed model to explainable dashboard —
+            I take ownership of the full pipeline, not just the interesting middle bit.
+          </div>
+        </div>
+        <div class="about-card reveal reveal-delay-3">
+          <div class="about-card-icon">◈</div>
+          <div class="about-card-title">Translation layer</div>
+          <div class="about-card-text">
+            I build outputs for the person who has to make a decision, not just the
+            person who built the model. Technical rigour with non-technical clarity.
+          </div>
+        </div>
+        <div class="about-card reveal reveal-delay-4">
+          <div class="about-card-icon">∿</div>
+          <div class="about-card-title">Production mindset</div>
+          <div class="about-card-text">
+            Reproducible pipelines, version-controlled code, documented methodology.
+            I build as if someone else has to run it tomorrow.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                  <button class="services__button">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </button>
-               </div>
+  <hr class="gold-rule" />
 
-               <!-- Services Design -->
-               <div class="services__card services-close">
-                  <div class="blob blob-2"></div>
+ 
+  <section id="projects">
+    <div class="section-tag reveal">Work</div>
+    <h2 class="section-heading reveal reveal-delay-1">Selected<br><em>Projects</em></h2>
 
-                  <div class="services__data">
-                     <h2 class="services__title">Software & Deployment</h2>
-                     <p class="services__description">
-                        Building practical, shareable demos and well-documented projects using GitHub,
-          VS Code, and lightweight deployment tools like Streamlit and GitHub Pages.
-                     </p>
-                  </div>
+    <div class="projects-grid">
 
-                 <div class="services__info">
-        <h3 class="services__subtitle">Skills & Tools</h3>
-
-        <ul class="services__skills">
-          <li class="services__skill">Streamlit</li>
-          <li class="services__skill">Git</li>
-          <li class="services__skill">GitHub</li>
-          <li class="services__skill">VS Code</li>
-          <li class="services__skill">SQL</li>
-          <li class="services__skill">Relational Databases</li>
-          <li class="services__skill">HTML5</li>
-          <li class="services__skill">CSS3</li>
-          <li class="services__skill">JavaScript</li>
-        </ul>
+     
+      <div class="project-card featured reveal reveal-delay-1">
+        <div>
+          <div class="project-num">01</div>
+          <span class="project-tag">Financial Risk · NLP · RAG</span>
+          <h3 class="project-title">FinRisk Terminal — AI Financial Risk Platform</h3>
+          <p class="project-desc">
+            Engineered a SQL data warehouse ingesting 15,000+ rows of financial market
+            data across 10 S&amp;P 500 tickers. Built interactive dashboards tracking
+            8+ real-time KPIs and a natural language AI copilot grounded in 500+ SEC
+            10-K filings — reducing analyst research time by ~40%.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">DuckDB</span>
+            <span class="tech-tag">XGBoost</span>
+            <span class="tech-tag">LangChain</span>
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">ChromaDB</span>
+            <span class="tech-tag">Streamlit</span>
+            <span class="tech-tag">MLflow</span>
+          </div>
+          <a href="https://github.com/MuntazirAliM" target="_blank" class="project-link">View on GitHub</a>
+        </div>
+        <div class="project-visual">
+          <img src="image.png" alt="FinRisk Terminal Preview" class="project-visual-img" />
+          <div class="project-visual-label">FINRISK TERMINAL</div>
+        </div>
       </div>
 
-                  <button class="services__button">
-                     <i class="ri-arrow-down-s-line"></i>
-                  </button>
-               </div>
-            </div>
-         </section>
-
-        
-         <!--==================== CONTACT ====================-->
-         <section class="contact section" id="contact">
-            <div class="contact__container container grid">
-               <div class="contact__data">
-                  <h2 class="section__title">Contact Me</h2>
-
-                  <p class="contact__description">Tell me about your next project.</p>
-
-                  <button class="contact__button button" id="contact-btn">
-                     Copy email <i class="ri-file-copy-line"></i>
-                     <!-- Enter your email -->
-                     <span class="contact__email" id="contact-email">muntaziralimughal6@gmail.com</span>
-                  </button>
-               </div>
-
-               <div class="contact__content grid">
-                  <div class="contact__info grid">
-                     <div>
-                        <h3 class="contact__title">Email</h3>
-                        <address class="contact__address">muntaziralimughal6@email.com</address>
-                     </div>
-   
-                     <div>
-                        <h3 class="contact__title">Location</h3>
-                        <address class="contact__address">London, England</address>
-                     </div>
-                  </div>
-
-                  <div class="contact__social">
-                     <h3 class="contact__title">Social Media</h3>
-   
-                     <div class="contact__links">
-                        <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" class="contact__link">
-                           Linkedin
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-   
-                        <a href="https://github.com/MuntazirAliM/" target="_blank" class="contact__link">
-                           GitHub
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-                     </div>
-                  </div>
-   
-                  <div class="contact__write">
-                     <h3 class="contact__title">Write Me & We'll Talk</h3>
-   
-                     <div class="contact__links">
-                        <a href="https://wa.me/+923318801180" target="_blank" class="contact__link">
-                           WhatsApp
-                           <i class="ri-arrow-right-up-long-line"></i>
-                        </a>
-                        
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer grid">
-         <div class="blob-animate"></div>
-         
-         <div class="footer__copy">
-            All Rights Reserved By <span>Muntazir</span>
-         </div>
-
-         <div class="footer__year">
-            &#169; <span id="footer-year"></span>
-         </div>
-      </footer>
       
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="assets/js/scrollreveal.min.js"></script>
+      <div class="project-card reveal reveal-delay-2">
+        <div class="project-num">02</div>
+        <span class="project-tag">Healthcare · ML · Explainability</span>
+        <h3 class="project-title">Hospital Readmission Prediction</h3>
+        <p class="project-desc">
+          Cleaned and wrangled a 10,000+ row clinical dataset, identified the top 5
+          drivers of 30-day readmissions using SHAP, and delivered an interactive
+          dashboard for non-clinical stakeholders.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">XGBoost</span>
+          <span class="tech-tag">SHAP</span>
+          <span class="tech-tag">scikit-learn</span>
+          <span class="tech-tag">Streamlit</span>
+        </div>
+        <a href="https://github.com/MuntazirAliM" target="_blank" class="project-link">View on GitHub</a>
+      </div>
 
-      <!--=============== ANIME JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+      
+      <div class="project-card reveal reveal-delay-3">
+        <div class="project-num">03</div>
+        <span class="project-tag">ETL · Business Intelligence</span>
+        <h3 class="project-title">Depot Management System</h3>
+        <p class="project-desc">
+          Replaced manual Excel reporting with an automated ETL pipeline and
+          real-time inventory tracking, eliminating errors across 8+ reporting
+          workflows and cutting reporting time by ~60%.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">SQL</span>
+          <span class="tech-tag">ETL</span>
+          <span class="tech-tag">Relational DBs</span>
+        </div>
+        <a href="https://github.com/MuntazirAliM" target="_blank" class="project-link">View on GitHub</a>
+      </div>
 
-      <!--=============== SWIPER JS ===============-->
-      <script src="assets/js/swiper-bundle.min.js"></script>
+      
+      <div class="project-card reveal reveal-delay-4">
+        <div class="project-num">04</div>
+        <span class="project-tag">ML · Sensor Data · Classification</span>
+        <h3 class="project-title">Sign Language Glove — Gesture Classification</h3>
+        <p class="project-desc">
+          Feature-engineered 5,000+ labelled sensor samples across 28 gesture classes.
+          Achieved 95%+ classification accuracy through rigorous cross-validation,
+          documented in a structured performance report.
+        </p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">scikit-learn</span>
+          <span class="tech-tag">Feature Engineering</span>
+          <span class="tech-tag">Signal Processing</span>
+        </div>
+        <a href="https://github.com/MuntazirAliM" target="_blank" class="project-link">View on GitHub</a>
+      </div>
 
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-   </body>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  
+  <section id="skills">
+    <div class="section-tag reveal">Capabilities</div>
+    <h2 class="section-heading reveal reveal-delay-1">Technical<br><em>Skills</em></h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-group reveal reveal-delay-1">
+        <div class="skill-group-title"><span>◐</span> Data &amp; Analysis</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>Python</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.95"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>SQL</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Pandas / NumPy</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Statistical Analysis</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Feature Engineering</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.85"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal reveal-delay-2">
+        <div class="skill-group-title"><span>∿</span> Machine Learning</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>XGBoost / scikit-learn</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>NLP / Transformers</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.80"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>RAG Pipelines</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>SHAP Explainability</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.82"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>MLflow / W&amp;B</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.72"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-group reveal reveal-delay-3">
+        <div class="skill-group-title"><span>⬡</span> Engineering &amp; Tools</div>
+        <div class="skill-list">
+          <div class="skill-item">
+            <div class="skill-name"><span>FastAPI / Streamlit</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.85"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>ETL Pipelines</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.88"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Git / GitHub</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.90"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>Chrome Extensions (MV3)</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.78"></div></div>
+          </div>
+          <div class="skill-item">
+            <div class="skill-name"><span>React / JavaScript</span></div>
+            <div class="skill-bar"><div class="skill-fill" data-width="0.70"></div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  
+  <section id="education">
+    <div class="section-tag reveal">Background</div>
+    <h2 class="section-heading reveal reveal-delay-1">Education &amp;<br><em>Formation</em></h2>
+
+    <div class="edu-timeline">
+
+      <div class="edu-item reveal reveal-delay-2">
+        <div class="edu-date">2025 — Present</div>
+        <div class="edu-content">
+          <div class="edu-degree">MSc Data Science</div>
+          <div class="edu-school">King's College London</div>
+          <div class="edu-desc">
+            Core modules in Statistical Analysis, Data Engineering, Business Intelligence,
+            Machine Learning, and Applied Data Science. Research focus on multi-task NLP
+            systems and alignment methods.
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal reveal-delay-3">
+        <div class="edu-date">2022 — 2025</div>
+        <div class="edu-content">
+          <div class="edu-degree">BSc (Hons) Software Engineering</div>
+          <div class="edu-school">Liverpool John Moores University</div>
+          <div class="edu-desc">
+            Built end-to-end software projects spanning backend systems, relational
+            databases, and applied ML components — including a real-time gesture
+            classification pipeline.
+          </div>
+        </div>
+      </div>
+
+      <div class="edu-item reveal reveal-delay-4">
+        <div class="edu-date">2022 — 2023</div>
+        <div class="edu-content">
+          <div class="edu-degree">BTEC Foundation Diploma</div>
+          <div class="edu-school">Pearson College</div>
+          <div class="edu-desc">
+            Studied embedded systems, microcontrollers, and engineering fundamentals.
+            Developed early interest in sensor data and hardware-software interfaces.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+
+  <section id="contact">
+    <div class="contact-label reveal">Get in touch</div>
+    <h2 class="contact-heading reveal reveal-delay-1">
+      Let's build something<br><em>worth building</em>
+    </h2>
+    <p class="contact-sub reveal reveal-delay-2">
+      Open to data science, ML engineering, and customer-facing technical roles.
+      Available from mid-June 2026.
+    </p>
+    <div class="contact-links reveal reveal-delay-3">
+      <a href="mailto:muntaziralimughal6@gmail.com" class="contact-link">Email</a>
+      <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" class="contact-link">LinkedIn</a>
+      <a href="https://github.com/MuntazirAliM" target="_blank" class="contact-link">GitHub</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-text">© 2026 Muntazir Ali Mughal · London, United Kingdom</div>
+    <div class="footer-logo">M · A · M</div>
+    <div class="footer-text">muntaziralim.github.io</div>
+  </footer>
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+ 
+  <script src="js/main.js"     type="module"></script>
+  <script src="js/parallax.js"></script>
+
+</body>
 </html>
