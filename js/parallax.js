@@ -1,3 +1,27 @@
+/* ============================================================
+   MUNTAZIR ALI MUGHAL — Portfolio
+   js/parallax.js  ·  v2 — Dark Editorial Cinema
+
+   Philosophy: slow, weighted, deliberate.
+   Every section transition feels like turning a page in a
+   luxury architecture or fashion editorial magazine.
+
+   Techniques:
+   ─ Cinematic page-load curtain (split reveal + gold flash)
+   ─ Hero orchestrated entrance sequence (post-curtain)
+   ─ Ambient idle float (ring + stat pills — never stops)
+   ─ Editorial wipe reveals (blur + y-drift on scroll-in)
+   ─ Section heading scrubbed drift (continues past viewport)
+   ─ Project card 3D tilt on mouse move
+   ─ Skill bar animated draw (sequenced per group)
+   ─ Education items split reveal (date left / content right)
+   ─ Gold rule draw-across on enter
+   ─ Magnetic hover (buttons, nav, contact links)
+   ─ Contact grand finale entrance
+   ─ Nav hide-on-scroll-down / show-on-scroll-up
+   ─ Active nav link gold highlight
+   ============================================================ */
+
 document.addEventListener('DOMContentLoaded', () => {
 
   gsap.registerPlugin(ScrollTrigger);
@@ -5,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (prefersReducedMotion) return;
 
+  /* ── Easing palette ─────────────────────────────────────── */
   const ease = {
     out:    'power3.out',
     inOut:  'power3.inOut',
@@ -14,6 +39,9 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
 
+  /* ══════════════════════════════════════════════════════════
+     1. CINEMATIC CURTAIN — split open + gold flash
+  ══════════════════════════════════════════════════════════ */
 
   const curtain = document.createElement('div');
   curtain.id = 'curtain';
@@ -48,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   document.body.appendChild(flashLine);
 
- 
+  /* Hide hero content before curtain lifts */
   gsap.set([
     '.hero-tag', '.hero-name', '.hero-title',
     '.hero-desc', '.hero-ctas', '.hero-visual', '.stat-pill',
@@ -74,7 +102,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }, '-=0.1');
 
 
- 
+  /* ══════════════════════════════════════════════════════════
+     2. HERO ENTRANCE — orchestrated post-curtain
+  ══════════════════════════════════════════════════════════ */
 
   function heroEntrance() {
     const tl = gsap.timeline({ defaults: { ease: ease.out } });
@@ -95,7 +125,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
+  /* ══════════════════════════════════════════════════════════
+     3. AMBIENT IDLE FLOAT — never stops
+  ══════════════════════════════════════════════════════════ */
 
   gsap.to('.hero-visual-inner', {
     y: '-12px', duration: 3.5,
@@ -119,7 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
- 
+  /* ══════════════════════════════════════════════════════════
+     4. HERO SCROLL — DEPTH LAYERS
+  ══════════════════════════════════════════════════════════ */
 
   const hT = { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 2.5 };
 
@@ -141,7 +175,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
+  /* ══════════════════════════════════════════════════════════
+     5. EDITORIAL REVEAL HELPER
+  ══════════════════════════════════════════════════════════ */
 
   function editorialReveal(selector, trigger, {
     stagger = 0.12, yFrom = 50, duration = 1.1,
@@ -158,7 +194,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 
-
+  /* ══════════════════════════════════════════════════════════
+     6. SECTION TAGS & HEADINGS
+  ══════════════════════════════════════════════════════════ */
 
   document.querySelectorAll('.section-tag').forEach(tag => {
     gsap.fromTo(tag,
@@ -179,7 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         scrollTrigger: { trigger: h, start: 'top 85%', toggleActions: 'play none none reverse' },
       }
     );
-
+    /* Continue drifting after reveal */
     gsap.to(h, {
       y: -25, ease: 'none',
       scrollTrigger: { trigger: h, start: 'top 50%', end: 'bottom top', scrub: 2.5 },
@@ -187,12 +225,17 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  /* ══════════════════════════════════════════════════════════
+     7. ABOUT
+  ══════════════════════════════════════════════════════════ */
 
   editorialReveal('.about-text p', '.about-text', { stagger: 0.14, yFrom: 40, duration: 1 });
   editorialReveal('.about-card',   '.about-right', { stagger: 0.16, yFrom: 50, duration: 1.1, delay: 0.1 });
 
 
- 
+  /* ══════════════════════════════════════════════════════════
+     8. PROJECTS — staggered depth + 3D tilt
+  ══════════════════════════════════════════════════════════ */
 
   gsap.fromTo('.project-card.featured',
     { y: 80, opacity: 0, filter: 'blur(8px)' },
@@ -231,7 +274,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
- 
+  /* ══════════════════════════════════════════════════════════
+     9. SKILLS — stagger columns + bar draw
+  ══════════════════════════════════════════════════════════ */
 
   gsap.fromTo('.skill-group',
     { y: 60, opacity: 0 },
@@ -257,7 +302,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
+  /* ══════════════════════════════════════════════════════════
+     10. EDUCATION — date left / content right
+  ══════════════════════════════════════════════════════════ */
 
   document.querySelectorAll('.edu-item').forEach(item => {
     const date    = item.querySelector('.edu-date');
@@ -286,7 +333,10 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
- 
+  /* ══════════════════════════════════════════════════════════
+     11. GOLD RULE — draw across viewport
+  ══════════════════════════════════════════════════════════ */
+
   document.querySelectorAll('.gold-rule').forEach(rule => {
     gsap.fromTo(rule,
       { scaleX: 0, transformOrigin: 'center center', opacity: 0.4 },
@@ -298,6 +348,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
+  /* ══════════════════════════════════════════════════════════
+     12. CONTACT — grand finale
+  ══════════════════════════════════════════════════════════ */
 
   gsap.fromTo('.contact-label',
     { opacity: 0, letterSpacing: '0.6em' },
@@ -333,7 +386,9 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 
 
-  
+  /* ══════════════════════════════════════════════════════════
+     13. MAGNETIC HOVER — buttons, nav, contact links
+  ══════════════════════════════════════════════════════════ */
 
   function addMagnetic(selector, strength = 0.3) {
     document.querySelectorAll(selector).forEach(el => {
@@ -355,6 +410,10 @@ document.addEventListener('DOMContentLoaded', () => {
   addMagnetic('.nav-links a',  0.2);
 
 
+  /* ══════════════════════════════════════════════════════════
+     14. NAV — hide on scroll down, show on scroll up
+         + active link gold highlight
+  ══════════════════════════════════════════════════════════ */
 
   let lastScroll = 0;
   const nav = document.querySelector('nav');
@@ -390,7 +449,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-
+  /* ══════════════════════════════════════════════════════════
+     15. FOOTER
+  ══════════════════════════════════════════════════════════ */
 
   gsap.fromTo('footer',
     { y: 30, opacity: 0 },

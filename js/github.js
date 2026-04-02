@@ -1,7 +1,18 @@
+/* ============================================================
+   MUNTAZIR ALI MUGHAL — Portfolio
+   js/github.js
 
+   Fetches pinned/public repos from GitHub API and renders
+   them into the projects grid dynamically.
+
+   Usage (in main.js):
+     import { loadGithubProjects } from './github.js';
+     loadGithubProjects('MuntazirAliM');
+   ============================================================ */
 
 const GITHUB_USERNAME = 'MuntazirAliM';
 
+// Repos to feature (in order). Must match GitHub repo names exactly.
 const FEATURED_REPOS = [
   'finrisk-terminal',
   'hospital-readmission',
@@ -9,7 +20,7 @@ const FEATURED_REPOS = [
   'sign-language-glove',
 ];
 
-
+// Display metadata — override GitHub's default descriptions here
 const REPO_META = {
   'finrisk-terminal': {
     label:  'Financial Risk · NLP · RAG',
@@ -35,7 +46,11 @@ const REPO_META = {
 };
 
 
-
+/**
+ * Fetch all public repos for a GitHub user.
+ * @param {string} username
+ * @returns {Promise<Array>}
+ */
 async function fetchRepos(username) {
   const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
   if (!res.ok) throw new Error(`GitHub API error: ${res.status}`);
@@ -43,7 +58,12 @@ async function fetchRepos(username) {
 }
 
 
-
+/**
+ * Build a single project card element.
+ * @param {object} repo  — GitHub repo object
+ * @param {number} index — 0-based position
+ * @returns {HTMLElement}
+ */
 function buildProjectCard(repo, index) {
   const meta     = REPO_META[repo.name] || {};
   const num      = String(index + 1).padStart(2, '0');
@@ -79,7 +99,11 @@ function buildProjectCard(repo, index) {
 }
 
 
-
+/**
+ * Main entry point. Fetches repos and renders them.
+ * Falls back to static HTML if the API fails.
+ * @param {string} username
+ */
 export async function loadGithubProjects(username = GITHUB_USERNAME) {
   const grid = document.querySelector('.projects-grid');
   if (!grid) return;
@@ -87,7 +111,7 @@ export async function loadGithubProjects(username = GITHUB_USERNAME) {
   try {
     const allRepos = await fetchRepos(username);
 
-   
+    // Sort by FEATURED_REPOS order, then by stars for any extras
     const sorted = FEATURED_REPOS
       .map(name => allRepos.find(r => r.name === name))
       .filter(Boolean);
@@ -97,16 +121,16 @@ export async function loadGithubProjects(username = GITHUB_USERNAME) {
       return;
     }
 
-    
+    // Clear static HTML and render dynamic cards
     grid.innerHTML = '';
     sorted.forEach((repo, i) => {
       const card = buildProjectCard(repo, i);
       grid.appendChild(card);
     });
 
-   
+    // Re-attach scroll reveal observer to new elements
     document.querySelectorAll('.reveal').forEach(el => {
-      
+      // Trigger IntersectionObserver re-scan
       el.classList.remove('visible');
       const observer = new IntersectionObserver(entries => {
         entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
@@ -116,6 +140,6 @@ export async function loadGithubProjects(username = GITHUB_USERNAME) {
 
   } catch (err) {
     console.warn('GitHub API unavailable — using static project HTML.', err);
-    
+    // Static HTML remains in place — no action needed
   }
 }
