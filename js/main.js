@@ -97,47 +97,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ══════════════════════════════════════════════════════════
-     MOBILE DETECTION
+     MESH POSITION SHORTCUTS
   ══════════════════════════════════════════════════════════ */
-  const isMobile = () => window.innerWidth <= 768;
-  const isTablet = () => window.innerWidth <= 1024 && window.innerWidth > 768;
-
-  /* ══════════════════════════════════════════════════════════
-     MESH POSITION SHORTCUTS — responsive
-     On mobile: mesh stays centred (x=0), no left/right offset
-     On tablet: smaller offset
-     On desktop: full offset
-  ══════════════════════════════════════════════════════════ */
-  function getPositions() {
-    if (isMobile()) return {
-      RIGHT:  { x:  0,   y: 0, opacity: 1 },
-      LEFT:   { x:  0,   y: 0, opacity: 1 },
-      CENTRE: { x:  0,   y: 0, opacity: 1 },
-      GONE:   { x:  0,   y: 0, opacity: 0 },
-    };
-    if (isTablet()) return {
-      RIGHT:  { x:  1.8, y: 0, opacity: 1 },
-      LEFT:   { x: -1.8, y: 0, opacity: 1 },
-      CENTRE: { x:  0,   y: 0, opacity: 1 },
-      GONE:   { x:  0,   y: 0, opacity: 0 },
-    };
-    return {
-      RIGHT:  { x:  2.4, y: 0, opacity: 1 },
-      LEFT:   { x: -2.4, y: 0, opacity: 1 },
-      CENTRE: { x:  0,   y: 0, opacity: 1 },
-      GONE:   { x:  0,   y: 0, opacity: 0 },
-    };
-  }
-
-  let { RIGHT, LEFT, CENTRE, GONE } = getPositions();
-  /* Recalculate on resize */
-  window.addEventListener('resize', () => {
-    ({ RIGHT, LEFT, CENTRE, GONE } = getPositions());
-    /* Update beats table */
-    BEATS[0].mesh = RIGHT;
-    BEATS[1].mesh = LEFT;
-    BEATS[4].mesh = RIGHT;
-  });
+  const RIGHT   = { x:  2.4, y: 0, opacity: 1 };
+  const LEFT    = { x: -2.4, y: 0, opacity: 1 };
+  const CENTRE  = { x:  0,   y: 0, opacity: 1 };
+  const GONE    = { x:  0,   y: 0, opacity: 0 };
 
   function moveMesh(pos) {
     if (!window.neuralTarget) return;
@@ -237,17 +202,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startCardOrbit() {
-    /* On mobile CSS takes over — skip JS orbit */
-    if (isMobile()) {
-      gsap.to(CARDS, { opacity: 1, duration: 0.5 });
-      gsap.to('.projects-label', { opacity: 1, duration: 0.5 });
-      return;
-    }
     gsap.to(CARDS, { opacity: 1, duration: 0.7, stagger: 0.14, ease: 'expo.out' });
     gsap.to('.projects-label', { opacity: 1, duration: 0.6, delay: 0.5, ease: 'expo.out' });
     positionCards(cardAngle);
     function loop() {
-      cardAngle += 0.0025;
+      cardAngle += 0.0025; /* slightly slower — more cinematic */
       positionCards(cardAngle);
       cardOrbitRAF = requestAnimationFrame(loop);
     }
@@ -257,10 +216,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function stopCardOrbit() {
     if (cardOrbitRAF) { cancelAnimationFrame(cardOrbitRAF); cardOrbitRAF = null; }
-    if (!isMobile()) {
-      gsap.to(CARDS, { opacity: 0, duration: 0.35, ease: 'power2.in' });
-      gsap.to('.projects-label', { opacity: 0, duration: 0.3 });
-    }
+    gsap.to(CARDS, { opacity: 0, duration: 0.35, ease: 'power2.in' });
+    gsap.to('.projects-label', { opacity: 0, duration: 0.3 });
   }
 
 
@@ -301,12 +258,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function startSkillOrbit() {
-    /* On mobile CSS takes over — skip JS orbit */
-    if (isMobile()) {
-      gsap.to(SKILL_TAGS, { opacity: 1, duration: 0.5 });
-      gsap.to('.skills-label', { opacity: 1, duration: 0.5 });
-      return;
-    }
     gsap.to(SKILL_TAGS, { opacity: 1, duration: 0.5, stagger: 0.05, ease: 'expo.out' });
     gsap.to('.skills-label', { opacity: 1, duration: 0.6, delay: 0.3, ease: 'expo.out' });
     positionSkills(skillAngle);
@@ -321,10 +272,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function stopSkillOrbit() {
     if (skillOrbitRAF) { cancelAnimationFrame(skillOrbitRAF); skillOrbitRAF = null; }
-    if (!isMobile()) {
-      gsap.to(SKILL_TAGS, { opacity: 0, duration: 0.3, ease: 'power2.in' });
-      gsap.to('.skills-label', { opacity: 0, duration: 0.3 });
-    }
+    gsap.to(SKILL_TAGS, { opacity: 0, duration: 0.3, ease: 'power2.in' });
+    gsap.to('.skills-label', { opacity: 0, duration: 0.3 });
   }
 
 
