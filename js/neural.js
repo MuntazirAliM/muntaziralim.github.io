@@ -110,6 +110,10 @@
   group.add(nodes, edges, halo);
   scene.add(group);
 
+  /* ── Expose refs for card orbit screen projection ───────── */
+  window.neuralGroup  = group;
+  window.neuralCamera = camera;
+
   /* ── Target position (driven by scroll beats) ───────────── */
   window.neuralTarget = { x: 2.2, y: 0, opacity: 1 };
 

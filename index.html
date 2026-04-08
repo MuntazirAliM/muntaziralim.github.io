@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Muntazir Ali Mughal — Data Scientist & ML Engineer"/>
-  <title>Muntazir Ali Mughal</title>
+  <meta name="description" content="Muntazir Ali Mughal — Data Scientist & ML Engineer. MSc Data Science, King's College London. Building end-to-end ML systems."/>
+  <meta property="og:title" content="Muntazir Ali Mughal — Data Scientist"/>
+  <meta property="og:description" content="MSc Data Science, King's College London. Building ML systems that ship."/>
+  <meta property="og:url" content="https://muntaziralim.github.io"/>
+  <title>Muntazir Ali Mughal — Data Scientist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css"/>
@@ -25,25 +28,42 @@
     <li><a href="#pin-education">Education</a></li>
     <li><a href="#pin-contact">Contact</a></li>
   </ul>
+  <!-- Mobile hamburger -->
+  <button class="nav-burger" id="navBurger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
   <div class="progress-bar" id="progressBar"></div>
 </nav>
 
-<!-- FIXED CANVAS — mesh renders here always -->
+<!-- Mobile nav drawer -->
+<div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="#pin-hero"      class="mnav-link">Home</a></li>
+    <li><a href="#pin-about"     class="mnav-link">About</a></li>
+    <li><a href="#pin-projects"  class="mnav-link">Projects</a></li>
+    <li><a href="#pin-skills"    class="mnav-link">Skills</a></li>
+    <li><a href="#pin-education" class="mnav-link">Education</a></li>
+    <li><a href="#pin-contact"   class="mnav-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- FIXED CANVAS -->
 <canvas id="neural-canvas"></canvas>
 
-<!-- FIXED OVERLAY PANELS — content layers, shown/hidden by JS -->
+<!-- OVERLAY PANELS -->
 <div id="overlay">
 
-  <!-- HERO panel -->
+  <!-- HERO -->
   <div class="panel" id="panel-hero">
     <div class="panel-side panel-left">
       <div class="eyebrow">Data Scientist &amp; ML Engineer</div>
       <h1 class="display-name">Muntazir<br><em>Ali Mughal</em></h1>
       <p class="display-sub">MSc Data Science · King's College London</p>
-      <p class="display-desc">Building end-to-end ML systems — from raw data pipelines to deployed models and explainable outputs.</p>
+      <p class="display-desc">Building end-to-end ML systems — from raw data pipelines to deployed models with explainable outputs. Available from mid-June 2026.</p>
       <div class="hero-ctas">
         <a href="#pin-projects" class="btn-primary">View Work</a>
-        <a href="https://github.com/MuntazirAliM" target="_blank" class="btn-ghost">GitHub ↗</a>
+        <a href="https://github.com/MuntazirAliM" target="_blank" rel="noopener" class="btn-ghost">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" rel="noopener" class="btn-ghost">LinkedIn ↗</a>
       </div>
     </div>
     <div class="scroll-hint">
@@ -52,125 +72,208 @@
     </div>
   </div>
 
-  <!-- ABOUT panel -->
+  <!-- ABOUT -->
   <div class="panel" id="panel-about">
     <div class="panel-side panel-right">
       <div class="eyebrow">About</div>
       <h2 class="panel-heading">Building things that<br><em>actually work</em></h2>
-      <p>I'm an MSc Data Science student at <strong>King's College London</strong> with a BSc in Software Engineering. I care about models that perform, pipelines that run in production, and outputs non-technical stakeholders can actually use.</p>
-      <p>I've built financial risk platforms grounded in <strong>SEC filings</strong>, clinical readmission models with <strong>SHAP explainability</strong>, and real-time data pipelines from raw hardware inputs.</p>
+      <p>I'm an MSc Data Science student at <strong>King's College London</strong> with a First Class BSc in Software Engineering from Liverpool John Moores University. I care about models that perform, pipelines that run in production, and outputs that non-technical stakeholders can actually use.</p>
+      <p>I've built financial risk platforms grounded in SEC 10-K filings, clinical readmission models with SHAP explainability deployed on Streamlit Cloud, real-time cognitive load estimators from keystroke patterns, and ML pipelines from physical sensor hardware to production inference.</p>
+      <p>I target roles where <strong>engineering rigour meets data science</strong> — not just notebooks, but systems that ship.</p>
       <div class="stat-row">
-        <div class="stat-item"><div class="stat-num">15K+</div><div class="stat-label">Rows analysed</div></div>
-        <div class="stat-item"><div class="stat-num">95%</div><div class="stat-label">Model accuracy</div></div>
-        <div class="stat-item"><div class="stat-num">500+</div><div class="stat-label">SEC filings</div></div>
+        <div class="stat-item">
+          <div class="stat-num">101K+</div>
+          <div class="stat-label">Patient records modelled</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">0.63</div>
+          <div class="stat-label">AUC — clinical benchmark</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">500+</div>
+          <div class="stat-label">SEC filings processed</div>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- PROJECTS panel — 4 cards orbit the mesh -->
+  <!-- PROJECTS — desktop orbit + mobile stack -->
   <div class="panel" id="panel-projects">
-    <div class="orbit-cards">
+
+    <!-- Desktop: orbit cards -->
+    <div class="orbit-cards" id="orbitCards">
       <div class="orbit-card" id="card-0">
-        <div class="card-tag">Financial Risk · RAG</div>
+        <div class="card-tag">Financial Risk · RAG · NLP</div>
         <div class="card-title">FinRisk Terminal</div>
-        <div class="card-desc">AI financial risk platform. 15K+ rows, 500+ SEC filings, NLP copilot.</div>
-        <div class="card-chips"><span>Python</span><span>DuckDB</span><span>XGBoost</span><span>RAG</span></div>
-        <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank">↗</a>
+        <div class="card-desc">AI-powered financial risk intelligence platform. XGBoost risk scoring on 10 S&P 500 companies backed by 500+ SEC 10-K filings. Groq-powered RAG copilot deployed on Streamlit.</div>
+        <div class="card-chips"><span>Python</span><span>DuckDB</span><span>XGBoost</span><span>LangChain</span><span>Groq</span><span>ChromaDB</span></div>
+        <a href="https://github.com/MuntazirAliM/financial-risk-copilot" class="card-link" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div class="orbit-card" id="card-1">
-        <div class="card-tag">Healthcare · ML</div>
+        <div class="card-tag">Healthcare · ML · Interpretability</div>
         <div class="card-title">Hospital Readmission</div>
-        <div class="card-desc">Top 5 readmission drivers via SHAP. Dashboard for non-clinical teams.</div>
-        <div class="card-chips"><span>XGBoost</span><span>SHAP</span><span>Streamlit</span></div>
-        <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank">↗</a>
+        <div class="card-desc">End-to-end readmission risk predictor on 101,766 diabetic patient records. XGBoost + SMOTE + SHAP waterfall explanations. Deployed live on Streamlit Cloud.</div>
+        <div class="card-chips"><span>XGBoost</span><span>SHAP</span><span>SMOTE</span><span>Streamlit</span><span>scikit-learn</span></div>
+        <a href="https://readmission-risk-muntazir.streamlit.app" class="card-link" target="_blank" rel="noopener">Live Demo ↗</a>
       </div>
       <div class="orbit-card" id="card-2">
-        <div class="card-tag">ETL · BI</div>
-        <div class="card-title">Depot Management</div>
-        <div class="card-desc">ETL pipeline replacing manual Excel. 8+ workflows automated, ~60% time saved.</div>
-        <div class="card-chips"><span>Python</span><span>SQL</span><span>ETL</span></div>
-        <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank">↗</a>
+        <div class="card-tag">Behavioural AI · Chrome Extension</div>
+        <div class="card-title">CogniType</div>
+        <div class="card-desc">Real-time cognitive load estimator from typing patterns alone — no wearables, no cameras. Chrome MV3 extension feeds a FastAPI backend with keystroke batch processing.</div>
+        <div class="card-chips"><span>FastAPI</span><span>SQLite</span><span>Chrome MV3</span><span>PyTorch</span><span>Python</span></div>
+        <a href="https://github.com/MuntazirAliM/cognitype" class="card-link" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
       <div class="orbit-card" id="card-3">
-        <div class="card-tag">ML · Sensors</div>
+        <div class="card-tag">Hardware ML · Signal Processing</div>
         <div class="card-title">Sign Language Glove</div>
-        <div class="card-desc">5K+ labelled sensor samples, 28 gesture classes, 95%+ accuracy.</div>
-        <div class="card-chips"><span>scikit-learn</span><span>Signal Processing</span></div>
-        <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank">↗</a>
+        <div class="card-desc">Flex sensor glove translating 28 ASL gesture classes to text in real time. 5K+ labelled sensor samples, 95%+ accuracy with scikit-learn classifiers.</div>
+        <div class="card-chips"><span>scikit-learn</span><span>Signal Processing</span><span>Embedded C</span><span>Python</span></div>
+        <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank" rel="noopener">View on GitHub ↗</a>
       </div>
     </div>
+
+    <!-- Mobile: card stack (shown only on small screens) -->
+    <div class="mobile-projects" id="mobileProjects">
+      <div class="eyebrow-centre">Selected Work</div>
+      <h2 class="panel-heading-center" style="margin-bottom:28px">Projects</h2>
+      <div class="mobile-card-stack">
+        <div class="mobile-card">
+          <div class="card-tag">Financial Risk · RAG</div>
+          <div class="card-title">FinRisk Terminal</div>
+          <div class="card-desc">XGBoost risk scoring + Groq RAG copilot grounded in 500+ SEC 10-K filings.</div>
+          <div class="card-chips"><span>Python</span><span>DuckDB</span><span>LangChain</span><span>Groq</span></div>
+          <a href="https://github.com/MuntazirAliM/financial-risk-copilot" class="card-link" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <div class="mobile-card">
+          <div class="card-tag">Healthcare · ML</div>
+          <div class="card-title">Hospital Readmission</div>
+          <div class="card-desc">101K patient records, SHAP explanations, live on Streamlit Cloud.</div>
+          <div class="card-chips"><span>XGBoost</span><span>SHAP</span><span>Streamlit</span></div>
+          <a href="https://readmission-risk-muntazir.streamlit.app" class="card-link" target="_blank" rel="noopener">Live Demo ↗</a>
+        </div>
+        <div class="mobile-card">
+          <div class="card-tag">Behavioural AI</div>
+          <div class="card-title">CogniType</div>
+          <div class="card-desc">Cognitive load from typing patterns. Chrome extension + FastAPI backend.</div>
+          <div class="card-chips"><span>FastAPI</span><span>Chrome MV3</span><span>PyTorch</span></div>
+          <a href="https://github.com/MuntazirAliM/cognitype" class="card-link" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+        <div class="mobile-card">
+          <div class="card-tag">Hardware ML</div>
+          <div class="card-title">Sign Language Glove</div>
+          <div class="card-desc">28 ASL gesture classes, 95%+ accuracy from flex sensor data.</div>
+          <div class="card-chips"><span>scikit-learn</span><span>Embedded C</span></div>
+          <a href="https://github.com/MuntazirAliM" class="card-link" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+    </div>
+
     <div class="projects-label">
-      <div class="eyebrow">Selected Work</div>
+      <div class="eyebrow-centre">Selected Work</div>
       <h2 class="panel-heading-center">Projects</h2>
     </div>
   </div>
 
-  <!-- SKILLS panel — tags orbit the mesh -->
+  <!-- SKILLS -->
   <div class="panel" id="panel-skills">
     <div class="skill-orbit">
       <div class="skill-tag" data-orbit="0">Python</div>
       <div class="skill-tag" data-orbit="1">SQL</div>
       <div class="skill-tag" data-orbit="2">PyTorch</div>
       <div class="skill-tag" data-orbit="3">XGBoost</div>
-      <div class="skill-tag" data-orbit="4">NLP</div>
+      <div class="skill-tag" data-orbit="4">LangChain</div>
       <div class="skill-tag" data-orbit="5">RAG</div>
       <div class="skill-tag" data-orbit="6">FastAPI</div>
       <div class="skill-tag" data-orbit="7">Streamlit</div>
       <div class="skill-tag" data-orbit="8">scikit-learn</div>
       <div class="skill-tag" data-orbit="9">SHAP</div>
-      <div class="skill-tag" data-orbit="10">ETL</div>
+      <div class="skill-tag" data-orbit="10">ChromaDB</div>
       <div class="skill-tag" data-orbit="11">Git</div>
+      <div class="skill-tag" data-orbit="12">MLflow</div>
+      <div class="skill-tag" data-orbit="13">DuckDB</div>
+      <div class="skill-tag" data-orbit="14">Docker</div>
     </div>
+
+    <!-- Mobile skills grid -->
+    <div class="mobile-skills">
+      <div class="eyebrow-centre">Capabilities</div>
+      <h2 class="panel-heading-center" style="margin-bottom:28px">Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-label">Languages</div>
+          <div class="skill-group-items"><span>Python</span><span>SQL</span><span>JavaScript</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">ML / AI</div>
+          <div class="skill-group-items"><span>PyTorch</span><span>scikit-learn</span><span>XGBoost</span><span>SHAP</span><span>HuggingFace</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">LLM / RAG</div>
+          <div class="skill-group-items"><span>LangChain</span><span>ChromaDB</span><span>Groq</span><span>OpenAI</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-label">Engineering</div>
+          <div class="skill-group-items"><span>FastAPI</span><span>Docker</span><span>Git</span><span>MLflow</span><span>DuckDB</span></div>
+        </div>
+      </div>
+    </div>
+
     <div class="skills-label">
-      <div class="eyebrow">Capabilities</div>
+      <div class="eyebrow-centre">Capabilities</div>
       <h2 class="panel-heading-center">Skills</h2>
     </div>
   </div>
 
-  <!-- EDUCATION panel -->
+  <!-- EDUCATION -->
   <div class="panel" id="panel-education">
     <div class="panel-side panel-left">
       <div class="eyebrow">Background</div>
-      <h2 class="panel-heading">Education</h2>
+      <h2 class="panel-heading">Education &amp;<br><em>Experience</em></h2>
       <div class="edu-list">
         <div class="edu-row">
-          <div class="edu-year">2025 — Present</div>
+          <div class="edu-year">2025 —<br>Present</div>
           <div class="edu-body">
             <div class="edu-degree">MSc Data Science</div>
             <div class="edu-school">King's College London</div>
-            <div class="edu-note">Statistical Analysis · ML · Data Engineering · Applied AI</div>
+            <div class="edu-note">Statistical learning · ML systems · Data engineering · Applied AI</div>
           </div>
         </div>
         <div class="edu-row">
-          <div class="edu-year">2022 — 2025</div>
+          <div class="edu-year">2022 —<br>2025</div>
           <div class="edu-body">
-            <div class="edu-degree">BSc (Hons) Software Engineering</div>
+            <div class="edu-degree">BSc (Hons) Software Engineering — <span class="edu-badge">First Class</span></div>
             <div class="edu-school">Liverpool John Moores University</div>
-            <div class="edu-note">Full-stack systems · Databases · Applied ML</div>
+            <div class="edu-note">Full-stack systems · Databases · Applied ML · Sign Language Glove dissertation</div>
           </div>
         </div>
         <div class="edu-row">
-          <div class="edu-year">2022 — 2023</div>
+          <div class="edu-year">2021 —<br>2022</div>
           <div class="edu-body">
             <div class="edu-degree">BTEC Foundation Diploma</div>
-            <div class="edu-school">Pearson College</div>
-            <div class="edu-note">Embedded systems · Microcontrollers</div>
+            <div class="edu-school">Pearson</div>
+            <div class="edu-note">Embedded systems · Microcontrollers · Electronics</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CONTACT panel -->
+  <!-- CONTACT -->
   <div class="panel" id="panel-contact">
     <div class="contact-centre">
       <div class="eyebrow-centre">Get in touch</div>
       <h2 class="contact-heading">Let's build something<br><em>worth building</em></h2>
-      <p class="contact-sub">Open to data science, ML engineering, and customer-facing technical roles.<br>Available from mid-June 2026.</p>
+      <p class="contact-sub">Open to data scientist, ML engineer, and data analyst roles in UK Tech &amp; SaaS.<br>London, United Kingdom.</p>
       <div class="contact-links">
-        <a href="mailto:muntaziralimughal6@gmail.com" class="contact-link">Email</a>
-        <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" class="contact-link">LinkedIn</a>
-        <a href="https://github.com/MuntazirAliM" target="_blank" class="contact-link">GitHub</a>
+        <a href="mailto:muntaziralimughal6@gmail.com" class="contact-link">
+          <span class="contact-link-icon">✉</span> Email
+        </a>
+        <a href="https://www.linkedin.com/in/muntazir-ali-mughal/" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-icon">in</span> LinkedIn
+        </a>
+        <a href="https://github.com/MuntazirAliM" target="_blank" rel="noopener" class="contact-link">
+          <span class="contact-link-icon">⌥</span> GitHub
+        </a>
       </div>
       <div class="contact-footer">
         <span>© 2026 Muntazir Ali Mughal</span>
@@ -182,21 +285,20 @@
 
 </div><!-- /overlay -->
 
-<!-- SCROLL TRIGGER SPACERS — invisible divs that drive scroll progress -->
-<!-- Each section is 100vh tall so user scrolls through each beat -->
+<!-- SCROLL DRIVER -->
 <div id="scroll-driver">
   <div class="beat" id="pin-hero"      data-beat="hero"      style="height:100vh"></div>
   <div class="beat" id="pin-about"     data-beat="about"     style="height:100vh"></div>
-  <div class="beat" id="pin-projects"  data-beat="projects"  style="height:200vh"></div>
-  <div class="beat" id="pin-skills"    data-beat="skills"    style="height:200vh"></div>
+  <div class="beat" id="pin-projects"  data-beat="projects"  style="height:130vh"></div>
+  <div class="beat" id="pin-skills"    data-beat="skills"    style="height:130vh"></div>
   <div class="beat" id="pin-education" data-beat="education" style="height:100vh"></div>
   <div class="beat" id="pin-contact"   data-beat="contact"   style="height:100vh"></div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="js/neural.js"></script>
-<script src="js/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+<script src="js/neural.js" defer></script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
